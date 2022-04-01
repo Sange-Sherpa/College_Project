@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Login CSS -->
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+    <title> Login </title>
+</head>
+<body>
+
+<!-- Main Login Form -->
+<form class="main-container d_flex" action="" method="post">
+    {% csrf_token %}
+    <div class="account_title">
+        <p> create account </p>
+    </div>
+
+    <div class="login_info registration_info d_flex">
+        <input type="text" placeholder="first name">
+        <input type="text" placeholder="last name">
+        <input type="text" placeholder="phone number">
+        <input type="text" placeholder="email">
+        <input type="text" placeholder="password">
+    </div>
+
+    <div class="buttons d_flex">
+        <a href="{% url 'students' %}" class="btn btn_universal btn_login"> create account </a>
+        <a href="{% url 'login' %}" class="btn_sign_in"> sign in instead </a>
+    </div>
+</form>
+
+</body>
+</html>  

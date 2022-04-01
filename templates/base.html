@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block stylesheets %}
+        <!-- FONTAWESOME links -->
+        <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+        
+        <link rel="stylesheet" href="{% static 'css/main-ui.css' %}">
+    {% endblock stylesheets %}
+
+    <title> Attendance Management System </title>
+</head>
+<body>
+
+    <div class="main-container">
+
+        <!-- SIDEBAR SECTION -->
+        <div class="sidebar">
+
+            <!-- logo -->
+            <div class="logo-section">
+                <p><a href="{% url 'students' %}">quickie</a></p>
+            </div>
+
+            <!-- main-navigation -->
+            <ul id="navbar" class="navbar">
+                <li class="nav-link">
+                    <a href="{% url 'students' %}"> students </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="{% url 'attendance' %}"> attendance </a>
+                </li>
+                
+                <li class="nav-link">
+                    <a href="{% url 'settings' %}"> settings </a>
+                </li>
+                
+                <li class="nav-link">
+                    <a id="logout_modal_open" href="#"> logout </a>
+                </li>
+            </ul>
+            <!-- end of main navigation section -->
+
+        </div> <!-- end of sidebar -->
+        
+        <!-- Content Bar -->
+        <div class="contentbar">
+            <div class="content-header">
+                <div class="date">
+                    <p>{% now "l, F jS" %}</p>
+                </div>
+                <div class="user">
+                    <p> Admin </p>
+                    <img src="{% static 'images/user.jpeg' %}"/>
+                </div>
+            </div>
+            
+            <div class="content-main">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    
+    </div>  <!-- end of main container-->
+
+    <!-- This is where the modals reside -->
+    {% block modal %}
+        <div id="logout_modal" class="logout_modal">
+            <div class="modal_universal modal_content_narrow">
+            
+                <!-- body-->
+                <div class="logout_body">
+                    <p><i class="fa-solid fa-message-question"></i> Are you sure you want to logout ? </p>
+                </div>
+            
+                <!-- footer -->
+                <div class="logout_footer">
+                    <a href="{% url 'login' %}" class="btn btn_universal">yes</a>
+                    <a id="logout_modal_close" class="btn btn_secondary close_modal">no</a>
+                </div>
+            </div>
+        </div>
+    {% endblock modal %}
+
+    <!-- All the javascript for this file -->
+    {% block javascript %}
+        <script src="{% static 'js/main.js' %}"></script>
+
+        <!-- django-bootstrap-modal-forms -->
+        <!-- <script src="{% static 'assets/js/bootstrap.js' %}"></script>
+        <script src="{% static 'assets/js/jquery.js' %}"></script>
+        <script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script> -->
+        <!-- ALTERNATIVELY LOAD THE MINIFIED VERSION -->
+        <!-- <script src="{% static 'js/jquery.bootstrap.modal.forms.min.js' %}"></script> -->
+    {% endblock javascript %}
+</body>
+</html>

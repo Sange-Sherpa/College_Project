@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/modal.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tabs.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tables.css' %}">
+{% endblock stylesheets %}
+
+{% block content %}
+
+    <div class="sem">
+        <div class="semester">
+            <p>Semester 1</p>
+        </div>
+    
+        <div class="semester">
+            <p>Semester 2</p>
+        </div>
+        
+        <div class="semester">
+            <p>Semester 3</p>
+        </div>
+        
+        <div class="semester">
+            <p>Semester 4</p>
+        </div>
+        
+        <div class="semester">
+            <p>Semester 5</p>
+        </div>
+        
+        <div class="semester">
+            <p>Semester 6</p>
+        </div>
+        
+        <div class="semester">
+            <p>Semester 7</p>
+        </div>
+        
+        <div class="semester">
+            <p>Semester 8</p>
+        </div>
+    </div>
+
+    <!-- <button id="add_class" class="add_class">add class</button> -->
+
+{% endblock content %}
+
+{% block modal %}
+    <div id="modal" class="bg_modal">
+        <div class="modal_universal modal_content_wide">
+
+            <div class="universal_header">
+                <p class="sem">semester <span>ii</span></p>
+                <p class="date">{% now "l, F jS" %}</p>
+            </div>
+
+            <div class="container">
+                <ul class="responsive-table">
+                  <li class="table-header">
+                    <div class="col col-1">full name</div>
+                    <div class="col col-2">view</div>
+                    <div class="col col-3">remove</div>
+                  </li>
+                  <li class="table-row">
+                    <div class="col col-1">Mike Doe</div>
+                    <div class="col col-2"><i class="fa-solid fa-eye"></i></div>
+                    <div class="col col-3"><i class="fa-solid fa-trash-can"></i></div>
+                  </li>
+                  <li class="table-row">
+                    <div class="col col-1">Jane Doe</div>
+                    <div class="col col-2"><i class="fa-solid fa-eye"></i></div>
+                    <div class="col col-3"><i class="fa-solid fa-trash-can"></i></div>
+                  </li>
+                  <li class="table-row">
+                    <div class="col col-1">Jane Doe</div>
+                    <div class="col col-2"><i class="fa-solid fa-eye"></i></div>
+                    <div class="col col-3"><i class="fa-solid fa-trash-can"></i></div>
+                  </li>
+                  <li class="table-row">
+                    <div class="col col-1">Jane Doe</div>
+                    <div class="col col-2"><i class="fa-solid fa-eye"></i></div>
+                    <div class="col col-3"><i class="fa-solid fa-trash-can"></i></div>
+                  </li>
+                  <li class="table-row">
+                    <div class="col col-1">Jane Doe</div>
+                    <div class="col col-2"><i class="fa-solid fa-eye"></i></div>
+                    <div class="col col-3"><i class="fa-solid fa-trash-can"></i></div>
+                  </li>
+                  <li class="table-row">
+                    <div class="col col-1">Jane Doe</div>
+                    <div class="col col-2"><i class="fa-solid fa-eye"></i></div>
+                    <div class="col col-3"><i class="fa-solid fa-trash-can"></i></div>
+                  </li>
+                </ul>
+            </div>
+
+            <div class="student_footer">
+                <a href="#" id="add_student" class="btn btn_universal"> add student </a>
+                <a href="#" id="close" class="btn btn_secondary close_modal"> close </a>
+            </div>
+        </div>
+    </div>
+{% endblock modal %}
+
+<!-- Inherits the link to javascript from the 'base.html' file -->
+{% block javascript %}
+    {{ block.super }}
+    <script>
+        // // modal selector
+        // const modal = $('modal');
+
+        // // opens the attendance for the current day.
+        // const open_attendance = document.querySelectorAll('.semester');
+
+        // open_attendance.forEach(sem => {
+        //     sem.addEventListener('click', () => {
+        //         modal.style.display = 'block';
+        //     })
+        // });
+        
+        // // closes the modal
+        // const close = $('close');
+
+        // close.addEventListener('click', () => {
+        //     modal.style.display = 'none'
+        // })
+
+        // // This views the profile of the student
+        // // const view = $('view');
+        // // view.addEventListener('click', () => {
+
+        // // })
+    </script>
+{% endblock javascript %}

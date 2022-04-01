@@ -1,0 +1,120 @@
+@import './base.css';
+
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+    height: 100vh;
+}
+
+/* ---------------------------------------------- Sidebar ---------------------------------------------- */
+
+.sidebar {
+    display: grid;
+    grid-template-rows: 1fr 6fr;
+    text-align: center;
+    background-color: var(--primary-color);
+}
+
+.logo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid var(--background-color);
+}
+
+.logo-section p a {
+    padding: 4rem 2rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: .3rem;
+    font-size: 25px;
+    color: var(--background-color);
+}
+
+/* ---------------------------------------------- Navigation Area ---------------------------------------------- */
+
+ul.navbar {
+    padding: 1rem 0;
+    list-style-type: none;
+}
+
+.nav-link {
+    width: 100%;
+    padding: 1.5rem 0 .5rem 2rem;
+    display: flex;
+}
+
+
+.nav-link a {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--background-color);
+    padding-bottom: .5rem;
+    border-bottom: 1px solid transparent;
+    text-transform: capitalize;
+    letter-spacing: .3rem;
+}
+
+a.active {
+    border-bottom: 1px solid #fff;
+}
+
+#logout {
+    border: none;
+}
+
+/* ---------------------------------------------- Content Bar ---------------------------------------------- */
+
+.contentbar {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 7fr;
+    gap: 50px;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    font-size: var(--font-medium);
+    font-weight: 400;
+    letter-spacing: .3px;
+}
+
+.user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.user img {
+    border-radius: 50%;
+    height: 80px;
+    width: auto;
+    margin-left: 15px;
+}
+
+.content-main {
+    padding: 20px;
+}
+
+/* ---------------------------------------------- Attendance ---------------------------------------------- */
+
+/* .attendance {
+    color: var(--primary-color);
+} */
+
+.add_class {
+    color: #fff;
+    background-color: var(--primary-color);
+    padding: 1rem 1.5rem;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+.add_class:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,58 @@
+@import './base.css';
+
+/* ---------------------------------------------- Attendance | Students ---------------------------------------------- */
+
+.semester {
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    color: #fff;
+    border: 1px solid transparent;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+
+.semester p {
+    letter-spacing: .1rem;
+}
+
+.semester:hover {
+    cursor: pointer;
+    background-color: #fff;
+    color: var(--primary-color);
+    transition: .2s linear;
+    border: 1px solid var(--primary-color);;
+}
+
+/* ---------------------------------------------- Settings ---------------------------------------------- */
+
+.form {
+    max-width: 400px;
+    text-transform: capitalize;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.form-group input {
+    padding: .6rem .8rem;
+    outline: none;
+}
+
+.form .btn {
+    color: #fff;
+    background-color: var(--primary-color);
+    padding: 1rem 1.5rem;
+    border: 1px solid transparent;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+

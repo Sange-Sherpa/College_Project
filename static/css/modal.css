@@ -1,0 +1,53 @@
+@import './base.css';
+/* ---------------------------------------------- Modal ---------------------------------------------- */
+
+/* Universal background of all the modals */
+.bg_modal, .logout_modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal_universal {
+    margin: 8% auto;
+    background-color: #fff;
+    padding: 2rem;
+    display: grid;
+    grid-template-rows: 3, 1fr;
+    gap: 5rem;
+}
+
+/* For modals with table in them */
+.modal_content_wide {
+    width: 600px;
+}
+
+/* For modals short messages in them */
+.modal_content_narrow {
+    width: 350px;
+}
+
+.universal_header {
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+}
+
+.attendance_body tr {
+    border: .5px solid var(--primary-color);
+}
+
+/* logout modal */
+.logout_header  {
+    text-align: center;
+}
+
+.logout_footer {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}

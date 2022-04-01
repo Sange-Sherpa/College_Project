@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Login CSS -->
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+    <title> Login </title>
+</head>
+<body>
+
+<!-- Main Login Form -->
+<form class="main-container d_flex" action="" method="post">
+    {% csrf_token %}
+    <div class="welcome_title">
+        <p> welcome to quickie </p>
+    </div>
+
+    <div class="login_info d_flex">
+        <input type="text" placeholder="email">
+        <input type="text" placeholder="password">
+    </div>
+
+    <div class="buttons d_flex">
+        <a href="{% url 'students' %}" class="btn btn_universal btn_login"> login </a>
+        <a href="{% url 'registration' %}" class="btn_create_account"> create account </a>
+        <a href="#" class="btn_forgot"> forgot password ? </a>
+    </div>
+</form>
+
+</body>
+</html>  

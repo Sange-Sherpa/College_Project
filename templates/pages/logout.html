@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/modal.css' %}">
+{% endblock stylesheets %}
+
+{% block javascript %}
+    {{ block.super }}
+    <!-- Code below Inherits the link to javascript from the 'base.html' file -->
+    <!-- {{ block.super }}
+    <script>
+        // modal selector
+        const modal = $('modal');
+
+        // closes the modal
+        const close = $('close');
+
+        close.addEventListener('click', () => {
+            modal.style.display = 'none'
+            window.location.replace('/students');
+        })
+    </script> -->
+{% endblock javascript %}

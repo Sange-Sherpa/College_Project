@@ -1,0 +1,122 @@
+/* imported for colors */
+@import './base.css';
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.main-container {
+    background-color: var(--background-color);
+    box-shadow: 3px 3px 5px 6px #ccc;
+    width: 500px;
+    /* height: 70vh; */
+    padding: 4rem;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.main-container div:not(:last-child) {
+    margin-bottom: 5rem;
+}
+
+/* ---------------------------------------------- Title ---------------------------------------------- */
+
+.welcome_title, .account_title {
+    color: var(--primary-color);
+    font-family: var(--primary-font);
+    font-size: var(--font-medium);
+    text-transform: uppercase;
+}
+
+.welcome_title p {
+    letter-spacing: .5rem;
+}
+
+.account_title p {
+    letter-spacing: .3rem;
+}
+
+/* ---------------------------------------------- Credentials ---------------------------------------------- */
+
+.login_info input{
+    width: 80%;
+    margin: auto;
+    border: none;
+    border-bottom: 1px solid var(--primary-color);
+    outline: none;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.registration_info input{
+    width: 80%;
+    margin: auto;
+    border: none;
+    border-bottom: 1px solid var(--primary-color);
+    outline: none;
+    text-align: center;
+    /* padding-bottom: 1rem; */
+}
+
+.login_info input::placeholder{
+    color: var(--primary-color-faded);
+    font-family: var(--primary-font);
+    font-size: var(--font-small);
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    line-height: 1.5rem;
+}
+
+.login_info input:focus::placeholder{
+    color: transparent;
+}
+
+.login_info input:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+/* ---------------------------------------------- Buttons ---------------------------------------------- */
+
+.buttons {
+    max-width: 60%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.buttons > a {
+    border: 1px solid transparent;
+    border-radius: .2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    font-weight: 300;
+}
+
+.buttons a:not(:last-child) {
+    /* color: var(--background-color); */
+    margin-bottom: 1.2rem;
+}
+
+.buttons a:first-child:hover {
+    cursor: pointer;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    transition: .3s ease-in-out;
+}
+
+.btn_forgot, .btn_create_account, .btn_sign_in {
+    font-size: var(--font-small);
+    color: var(--primary-color-faded);
+}
+
+.btn_forgotL:hover, .btn_create_account:hover, .btn_sign_in:hover {
+    color: var(--primary-color);
+    transition: .3 ease-in-out;
+    cursor: pointer;
+}

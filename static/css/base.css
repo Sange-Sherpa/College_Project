@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-font: 'Poppins';
+    --font-smallest: 10px;
+    --font-small: 13px;
+    --font-medium: 20px;
+    --font-large: 30px;
+    --primary-color: #5a5a5a;
+    --primary-color-faded: #979797;
+    --background-color: #fff;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* background-color: aqua; */
+}
+
+.d_flex {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* all elements with btn class inherit this property */
+.btn {
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    text-transform: capitalize;
+}
+
+.btn_universal {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+.btn_secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+/* all the span elements in the page must be uppercase */
+span {
+    text-transform: uppercase;
+}

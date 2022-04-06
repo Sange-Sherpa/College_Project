@@ -13,6 +13,7 @@
     --font-medium: 20px;
     --font-large: 30px;
     --primary-color: #5a5a5a;
+    /* --primary-color: #614bff; */
     --primary-color-faded: #979797;
     --background-color: #fff;
 }
@@ -31,22 +32,6 @@ a {
     text-decoration: none;
 }
 
-/* all elements with btn class inherit this property */
-.btn {
-    padding: 10px 20px;
-    border: 1px solid transparent;
-    text-transform: capitalize;
-}
-
-.btn_universal {
-    background-color: var(--primary-color);
-    color: var(--background-color);
-}
-
-.btn_secondary {
-    background-color: transparent;
-    color: var(--primary-color);
-}
 
 /* all the span elements in the page must be uppercase */
 span {

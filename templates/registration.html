@@ -14,23 +14,24 @@
 <body>
 
 <!-- Main Login Form -->
-<form class="main-container d_flex" action="" method="post">
+<form class="main-container d_flex" action="{% url 'registration' %}" method="POST">
     {% csrf_token %}
     <div class="account_title">
         <p> create account </p>
     </div>
 
     <div class="login_info registration_info d_flex">
-        <input type="text" placeholder="first name">
-        <input type="text" placeholder="last name">
-        <input type="text" placeholder="phone number">
-        <input type="text" placeholder="email">
-        <input type="text" placeholder="password">
+        {{ form.first_name }}
+        {{ form.last_name }}
+        {{ form.phone }}
+        {{ form.username }}
+        {{ form.password1 }}
+        {{ form.password2 }}
     </div>
 
     <div class="buttons d_flex">
-        <a href="{% url 'students' %}" class="btn btn_universal btn_login"> create account </a>
-        <a href="{% url 'login' %}" class="btn_sign_in"> sign in instead </a>
+        <button type="submit" class="btn btn_universal">create account</button>
+        <a href="{% url 'login' %}" class="btn btn_sign_in"> sign in instead </a>
     </div>
 </form>
 

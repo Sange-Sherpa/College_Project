@@ -1,26 +1,27 @@
-from .forms import CustomUserCreationForm
+import re
 from django.contrib import messages
+from django.http import HttpResponse
+from .forms import CustomUserCreationForm
 from django.shortcuts import redirect, render
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
 def user_registration(request):
+    form = CustomUserCreationForm()
+
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
-    
         if form.is_valid():
             form.save()
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password1']
+            username = form.cleaned_data.get('username')
+            messages.success(request, f'Account was created for {username}.')
 
-            user = authenticate(username=username, password=password)
-            login(request, user)
-            return redirect('students')
-
+            return redirect('login')
     else:
-        form = CustomUserCreationForm()
+        print("Could not do anything")
 
-    return render(request, 'registration.html', {'form': form})
+    context = {'form': form}
+    return render(request, 'registration.html', context)
 
 
 def user_login(request):
@@ -33,19 +34,23 @@ def user_login(request):
 
         if user is not None:
             login(request, user)
-            print("Logged in !!")
+            # messages.success(request, 'LOGGED IN')
+            print('LOGGED IN')
             return redirect('students')
         else:
-            print(user)
-            return render(request, 'login.html', {'form': CustomUserCreationForm(request.POST)})
-    
+            print('COULD NOT LOG IN')
+            # messages.info(request, 'COULD NOT LOG IN')
+            return redirect('/')
     else:
-        return render(request, 'login.html', {'form': CustomUserCreationForm()})
+        print('Could not log in.')
+
+    context = {}
+    return render(request, 'login.html', context)
 
 
 def user_logout(request):
     logout(request)
-    messages.success(request, "You were logged out ... ")
+    print("You were logged out ... ")
     return redirect('login')
 
 

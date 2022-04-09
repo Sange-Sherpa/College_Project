@@ -10,28 +10,28 @@ class CustomUserCreationForm(UserCreationForm):
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         self.fields['first_name'].widget.attrs.update({
-            # 'required': '',
+            'required': '',
             'name': 'first_name',
             'id': 'first_name',
             'type': 'text',
             'placeholder': 'first name'
         })
         self.fields['last_name'].widget.attrs.update({
-            # 'required': '',
+            'required': '',
             'name': 'last_name',
             'id': 'last_name',
             'type': 'text',
             'placeholder': 'last name'
         })
         self.fields['username'].widget.attrs.update({
-            'required': '',
+            # 'required': '',
             'name': 'username',
             'id': 'username',
             'type': 'text',
             'placeholder': 'username'
         })
         self.fields['phone'].widget.attrs.update({
-            # 'required': '',
+            'required': '',
             'name': 'phone',
             'id': 'phone',
             'type': 'text',

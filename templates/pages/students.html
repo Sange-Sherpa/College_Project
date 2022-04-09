@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% if messages %}
+    {% for message in messages %}
+        {{ message }}
+    {% endfor %}
+{% endif %}
+
 {% block stylesheets %}
     {{ block.super }}
     <link rel="stylesheet" href="{% static 'css/modal.css' %}">

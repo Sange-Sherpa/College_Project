@@ -22,7 +22,14 @@
 </head>
 <body>
 
-    
+    {% block message %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show position-absolute fixed-top text-center" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endblock message %}
 
     <div class="main-container">
 

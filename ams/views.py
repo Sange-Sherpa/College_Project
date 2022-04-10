@@ -1,6 +1,5 @@
-import re
+from email import message
 from django.contrib import messages
-from django.http import HttpResponse
 from .forms import CustomUserCreationForm
 from django.shortcuts import redirect, render
 from django.contrib.auth import authenticate, login, logout
@@ -34,15 +33,11 @@ def user_login(request):
 
         if user is not None:
             login(request, user)
-            # messages.success(request, 'LOGGED IN')
-            print('LOGGED IN')
+            messages.add_message(request, messages.SUCCESS, f'Welcome back {username}')
             return redirect('students')
         else:
-            print('COULD NOT LOG IN')
-            # messages.info(request, 'COULD NOT LOG IN')
+            messages.add_message(request, messages.WARNING, 'Username or password is incorrect.')
             return redirect('/')
-    else:
-        print('Could not log in.')
 
     context = {}
     return render(request, 'login.html', context)
